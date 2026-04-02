@@ -10,7 +10,7 @@ navigate(`/product/${item.id}`)
     <div className='card border-0' onClick={showDetail}>
       <img src={item?.img} />
       {item?.choice==true? <div className='choice'>Consciou choice</div>:""}
-      <div>{item?.title}</div>
+      <div className='card-name'>{item?.title}</div>
       <div>{item?.price}원</div>
      <div className='size-list'>
   {item?.size?.map((s) => (

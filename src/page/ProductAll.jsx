@@ -3,19 +3,24 @@ import ProductCard from '../component/ProductCard'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useSearchParams } from 'react-router-dom';
 
 const ProductAll = () => {
   const [productList, setProductList]=useState([]);
+  const [query,setQuery]=useSearchParams();
   const getProducts=async()=>{
-    let url=` https://my-json-server.typicode.com/hong-free/
-H-M_site/products`;
+    let serchQuery= query.get("q")|| "";
+    let url=` https://my-json-server.typicode.com/hong-free/H-M_site/products?q=${serchQuery}`;
+
+    
+    console.log(serchQuery)
     let response=await fetch(url);
     let data=await response.json();
     setProductList(data);
   }
   useEffect(()=>{
     getProducts();
-  },[])
+  },[query]);
   return (
     <div>
       <Container>

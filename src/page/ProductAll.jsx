@@ -7,7 +7,8 @@ import Col from 'react-bootstrap/Col';
 const ProductAll = () => {
   const [productList, setProductList]=useState([]);
   const getProducts=async()=>{
-    let url=` https://my-json-server.typicode.com/hong-free/noona-hm/products`;
+    let url=` https://my-json-server.typicode.com/hong-free/
+H-M_site/products`;
     let response=await fetch(url);
     let data=await response.json();
     setProductList(data);

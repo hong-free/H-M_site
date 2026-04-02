@@ -11,7 +11,7 @@ navigate(`/product/${item.id}`)
       <img src={item?.img} />
       {item?.choice==true? <div className='choice'>Consciou choice</div>:""}
       <div>{item?.title}</div>
-      <div>\{item?.price}원</div>
+      <div>{item?.price}원</div>
      <div className='size-list'>
   {item?.size?.map((s) => (
     <div key={s} className="size">{s} </div>

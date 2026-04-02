@@ -22,7 +22,9 @@
      cursor: pointer; 
     
 }
-
+.card-name{
+    font-weight: bold;
+}
 .choice{
     position: absolute;
     top: 0;
